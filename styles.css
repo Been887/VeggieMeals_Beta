@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+
+    overflow-x: hidden;
+
+    scrollbar-width: none;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.topbar {
+    padding: 2px;
+    display: block;
+    position: relative;
+
+    background-color: whitesmoke;
+}
+
+.banner {
+    display: block;
+    position: relative;
+
+    height: 100vh;
+    width: 100vw;
+
+    text-align: center;
+
+    border-bottom: 2px solid rgba(1.0, 1.0, 1.0, 0.3);
+}
+/*10px = 0.009259259 * 100 units*/
+.banner .texticon {
+    margin: calc((var(--100u)*0.009259259)/2);
+    left: 20%;
+
+    position: absolute;
+    height: calc(var(--100u)*0.09259259);
+    width: auto;
+}
+
+h1 {
+    font-size: calc(var(--100u)*0.069444444);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+h2 {
+    font-size: calc(var(--100u)*0.036111111);
+    font-family: sans-serif;
+    font-weight: bold;
+}
+h3 {
+    font-size: calc(var(--100u)*0.024305556);
+    padding: 0;
+    margin: 0;
+}
+p {
+    font-size: calc(var(--100u)*0.019444444);
+    font-family: sans-serif;
+    color: rgb(65, 65, 65);
+}
+strong {
+    font-size: calc(var(--100u)*0.021333333);
+    color: black;
+}
+.banner .bg {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position:absolute;
+    z-index: -1;
+}
+.banner .gif {
+    position: absolute;
+
+    top: 71.5%;
+    left: 83%;
+
+    width: calc(var(--100u)*0.0155);
+    height: auto;
+    z-index: 2;
+}
+.blurblock {
+    top: 0;
+    left: 0;
+    display: block;
+    position: absolute;
+    width: 100vw;
+    padding: calc(var(--100u)*0.018518519);
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(1.0, 1.0, 1.0, 0.3);
+    z-index: 0;
+}
+.colourblock {
+    display: grid;
+    grid-template-columns: 1fr, 2fr;
+    gap: 0;
+
+    position: relative;
+    width: 100vw;
+    padding: 10px;
+    background-color: whitesmoke;
+}
+.grid1 {
+    left: 0;
+    grid-column: 1;
+    max-width: 50%;
+}
+.grid2 {
+    max-width: 50%;
+    grid-column: 2;
+    left: 0;
+}
+
+.directory {
+    left: -12%;
+
+    border-radius: 1.5%;
+    display: block;
+    position: fixed;
+    overflow: hidden;
+    margin: 0;
+    padding: 0.5%;
+    background-color: rgba(113, 196, 96, 0.801);
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+
+    top: 12.5%;
+    width: 10%;
+    height: 75%;
+
+    z-index: 10;
+
+    transition: left 0.8s ease-in-out;
+}
+.directory a {
+    margin: 5px;
+}
+.revealArrow img{
+    transition: left 0.8s ease-in-out;
+    position: fixed;
+    top: 47.5%;
+    left: -1.25%;
+    width: 2.5%;
+    height: auto;
+    z-index: 9;
+
+    transition: left 0.8s ease-in-out;
+}
+.recipethumbnail {
+    width: 20%;
+    height: 30%;
+    border-radius: 15%;
+}
