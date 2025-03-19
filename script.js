@@ -28,6 +28,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
         console.log("You are currently browsing " + fileName + ".\n");
     }
 
+    const directoryOpen = localStorage.getItem('directoryOpen') === 'true';
+    if (directoryOpen) {
+        directory.style.left = "0";
+        revealArrow.style.left = "10.95%";
+        revealArrow.style.transform = "scaleX(-1)";
+    }
+
     window.addEventListener("click", displayfile);
 
     window.addEventListener("scroll", function() {
