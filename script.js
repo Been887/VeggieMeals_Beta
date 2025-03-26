@@ -1,8 +1,16 @@
 let open = false;
 
 document.addEventListener('DOMContentLoaded', (event) => {
+
     const directory = document.createElement("div");
     const revealArrow = document.createElement("img");
+
+    let curPage = window.location.pathname;
+
+    window.addEventListener("popstate", () => {
+        curPage = window.location.pathname;
+    });
+
 
     // Retrieve state from localStorage
     const savedState = localStorage.getItem('directoryState');
@@ -18,7 +26,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         open = !open;
         if (open) {
             directory.style.left = "0";
-            revealArrow.style.left = "10.95%";
+            revealArrow.style.left = "11%";
             revealArrow.style.transform = "scaleX(-1)";
             localStorage.setItem('directoryState', 'open');
         } else {
@@ -28,6 +36,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             localStorage.setItem('directoryState', 'closed');
         }
     }
+
 
     // Styling and positioning for revealArrow
     revealArrow.classList.add("revealArrow");
@@ -58,6 +67,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Add event listeners
     revealArrow.addEventListener("click", toggleDirectory);
+    aboutUsLink.addEventListener("click", () => {
+        if (curPage != "/VeggieMeals_Beta/pages/about_us.html" && curPage != "/VeggieMeals_Beta/index.html") {
+            window.location.href = "/VeggieMeals_Beta/pages/about_us.html";
+
+        } else if (curPage == "/VeggieMeals_Beta/index.html") {
+            aboutUsLink.scrollIntoView({behavior:"smooth", block:"start"});
+        }
+    });
+    ourGoalLink.addEventListener("click", () => {
+        if (curPage != "/VeggieMeals_Beta/index.html") {
+            window.location.href = "/VeggieMeals_Beta/index.html";
+            aboutUsLink.scrollIntoView({behaviour:"smooth", block:"start"});
+        }
+    });
 
     // Scroll event to hide banner GIF
     let hasScrolled = false;
@@ -73,9 +96,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Update viewport variable
     const hundredUnits = Math.min(window.innerHeight, window.innerWidth);
     document.documentElement.style.setProperty('--100u', `${hundredUnits}px`);
-
-    //test if the js works
-    document.addEventListener("click", () => {
-        console.log("Your click has been registered.\n");
-    });
 });

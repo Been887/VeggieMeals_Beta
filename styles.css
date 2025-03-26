@@ -13,6 +13,7 @@ body::-webkit-scrollbar {
 }
 
 a {
+    font-size: calc(var(--100u)*0.019444444);
     text-decoration: none;
 }
 a:hover {
