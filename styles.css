@@ -125,8 +125,6 @@ strong {
 }
 
 .directory {
-    left: -12%;
-
     border-radius: 1.5%;
     display: block;
     position: fixed;
@@ -146,17 +144,17 @@ strong {
 }
 .directory a {
     margin: 5px;
+    display: block;
 }
-.revealArrow img{
+.revealArrow{
     transition: left 0.8s ease-in-out;
     position: fixed;
-    top: 47.5%;
-    left: -1.25%;
+    top: 12.45%;
     width: 2.5%;
     height: auto;
     z-index: 9;
 
-    transition: left 0.8s ease-in-out;
+    transition: left 0.8s ease-in-out, transform 0.3s ease;
 }
 .recipethumbnail {
     width: 20%;

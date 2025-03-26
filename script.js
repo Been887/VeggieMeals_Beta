@@ -30,30 +30,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     // Styling and positioning for revealArrow
-    revealArrow.style.position = "fixed";
+    revealArrow.classList.add("revealArrow");
     revealArrow.style.left = "-1.25%";
-    revealArrow.style.top = "12.5%";
-    revealArrow.style.width = "2.5%";
-    revealArrow.style.height = "auto";
     revealArrow.src = "/C:/Users/BenDowney/OneDrive - Cognita Schools/Documents/GitHub/VeggieMeals_Beta/resources/arrow.png";
-    revealArrow.style.cursor = "pointer";
-    revealArrow.style.transition = "left 0.8s ease-in-out, transform 0.3s ease";
 
     // Directory element settings
     directory.id = "directory";
-    directory.style.position = "fixed";
     directory.style.left = "-12%";
-    directory.style.top = "12.5%";
-    directory.style.width = "10%";
-    directory.style.height = "75%";
-    directory.style.backgroundColor = "rgba(113, 196, 96, 0.801)";
-    directory.style.border = "0.5px solid rgba(0, 0, 0, 0.5)";
-    directory.style.borderRadius = "1.5%";
-    directory.style.overflow = "hidden";
-    directory.style.margin = "0";
-    directory.style.padding = "0.5%";
-    directory.style.transition = "left 0.8s ease-in-out";
-    directory.style.zIndex = "10000";
+    directory.classList.add("directory");
 
     const directoryHeader = document.createElement("h2");
     directoryHeader.innerText = "Find Sections";
@@ -61,16 +45,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const aboutUsLink = document.createElement("a");
     aboutUsLink.innerText = "About Us";
-    aboutUsLink.style.display = "block";
-    aboutUsLink.style.margin = "5px";
-    aboutUsLink.href = "recipes/avocado_on_toast.html";
+    aboutUsLink.href = "/recipes/avocado_on_toast.html";
     directory.appendChild(aboutUsLink);
 
     const ourGoalLink = document.createElement("a");
     ourGoalLink.innerText = "Our Goal";
-    ourGoalLink.style.display = "block";
-    ourGoalLink.style.margin = "5px";
-    ourGoalLink.href = "recipes/halloumi_burger.html";
+    ourGoalLink.href = "/recipes/halloumi_burger.html";
     directory.appendChild(ourGoalLink);
 
     document.body.appendChild(directory);
