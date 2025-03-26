@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Styling and positioning for revealArrow
     revealArrow.classList.add("revealArrow");
     revealArrow.style.left = "-1.25%";
-    revealArrow.src = "/C:/Users/BenDowney/OneDrive - Cognita Schools/Documents/GitHub/VeggieMeals_Beta/resources/arrow.png";
+    revealArrow.src = "/VeggieMeals_Beta/resources/arrow.png";
 
     // Directory element settings
     directory.id = "directory";
@@ -45,12 +45,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const aboutUsLink = document.createElement("a");
     aboutUsLink.innerText = "About Us";
-    aboutUsLink.href = "/recipes/avocado_on_toast.html";
+    aboutUsLink.href = "/VeggieMeals_Beta/recipes/avocado_on_toast.html";
     directory.appendChild(aboutUsLink);
 
     const ourGoalLink = document.createElement("a");
     ourGoalLink.innerText = "Our Goal";
-    ourGoalLink.href = "/recipes/halloumi_burger.html";
+    ourGoalLink.href = "/VeggieMeals_Beta/recipes/halloumi_burger.html";
     directory.appendChild(ourGoalLink);
 
     document.body.appendChild(directory);
@@ -73,4 +73,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     // Update viewport variable
     const hundredUnits = Math.min(window.innerHeight, window.innerWidth);
     document.documentElement.style.setProperty('--100u', `${hundredUnits}px`);
+
+    //test if the js works
+    document.addEventListener("click", () => {
+        console.log("Your click has been registered.\n");
+    });
 });
