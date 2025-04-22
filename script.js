@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     const aboutUsLink = document.createElement("a");
     aboutUsLink.innerText = "About Us";
-    aboutUsLink.href = "/VeggieMeals_Beta/recipes/avocado_on_toast.html";
+    aboutUsLink.href = "/VeggieMeals_Beta/index.html#aboutus";
     directory.appendChild(aboutUsLink);
 
     const ourGoalLink = document.createElement("a");
     ourGoalLink.innerText = "Our Goal";
-    ourGoalLink.href = "/VeggieMeals_Beta/recipes/halloumi_burger.html";
+    ourGoalLink.href = "/VeggieMeals_Beta/index.html#aboutus";
     directory.appendChild(ourGoalLink);
 
     document.body.appendChild(directory);
@@ -67,20 +67,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     // Add event listeners
     revealArrow.addEventListener("click", toggleDirectory);
-    aboutUsLink.addEventListener("click", () => {
-        if (curPage != "/VeggieMeals_Beta/pages/about_us.html" && curPage != "/VeggieMeals_Beta/index.html") {
-            window.location.href = "/VeggieMeals_Beta/pages/about_us.html";
-
-        } else if (curPage == "/VeggieMeals_Beta/index.html") {
-            aboutUsLink.scrollIntoView({behavior:"smooth", block:"start"});
-        }
-    });
-    ourGoalLink.addEventListener("click", () => {
-        if (curPage != "/VeggieMeals_Beta/index.html") {
-            window.location.href = "/VeggieMeals_Beta/index.html";
-            aboutUsLink.scrollIntoView({behaviour:"smooth", block:"start"});
-        }
-    });
 
     // Scroll event to hide banner GIF
     let hasScrolled = false;
